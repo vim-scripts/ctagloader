@@ -1,0 +1,10 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=4268
+
+This script will automatically traverse your path tree from the current directory all the way to root and load tags files found along the way.
+This is often useful when you have a root ctag file for your project and you often work in some subdirectories of your projects.
+For example, if you have a project structured as follows:
+foo/
+     bar/
+     baz/
+There is a ctag file (often named as tags/TAGS) in foo/ and you constantly work in foo/bar/ or foo/baz/
+Say you are now in foo/bar/. If you execute "vim hello_world.c", the ctag file in foo/ will be found and loaded.
