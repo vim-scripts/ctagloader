@@ -6,6 +6,11 @@ function! SetCTags()
         let ctagfile = substitute(system('ls ' . ctagdir . '/tags'), "\n", "", "")
         if match(ctagfile, "^.*tags$") != -1
             execute 'autocmd BufEnter * :setlocal tags+=' . ctagfile
+        else
+            let ctagfile = substitute(system('ls ' . ctagdir . '/TAGS'), "\n", "", "")
+            if match(ctagfile, "^.*TAGS$") != -1
+                execute 'autocmd BufEnter * :setlocal tags+=' . ctagfile
+            endif
         endif
     endfor
     unlet ctagdir
